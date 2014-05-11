@@ -15,7 +15,7 @@
         </ul>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
-            <li><%= link_to( current_user.name , "#")%></li>
+            <li><%= link_to( current_user.name , edit_user_registration_path)%></li>
             <li><%= link_to("登出" , signout_path)%></li>
           <% else %>
             <li><%= link_to("登入" , signin_path)%></li>
