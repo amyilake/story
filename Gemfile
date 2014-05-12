@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
+gem 'bootstrap-sass', '2.3.2.0'
+
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -31,6 +35,22 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# use devise to handle user login
+gem 'devise'
+
+gem 'simple_form'
+
+group :development do
+  gem 'quiet_assets'
+  gem 'pry-rails'
+  gem "better_errors"
+  gem 'meta_request'
+  gem 'annotate', ">=2.6.0"
+  gem 'timecop'
+end
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
