@@ -1,0 +1,11 @@
+<div class='row'>
+  <% @posts.each do |post| %>
+    <div class="span4">
+      <div class="well">
+        <%= post.title %>
+        <br/>
+        <%= post.user_id %>
+      </div>
+    </div>
+  <% end%>
+</div>
