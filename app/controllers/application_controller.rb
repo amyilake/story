@@ -5,6 +5,24 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+
+ def login_required
+    if current_user.blank?
+      respond_to do |format|
+        format.html{
+          authenticate_user!
+        }
+        format.js{
+          render :partial => "common/not_logined"
+        }
+        format.all{
+          head(:unauthorized)
+        }
+      end
+    end
+ end
+
+
   protected
 
     def configure_permitted_parameters
