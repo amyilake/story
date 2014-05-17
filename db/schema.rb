@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20140515121950) do
   create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "user_id"
+    t.integer  "author_id"
     t.string   "type"
     t.text     "remote_photo_path"
     t.string   "remote_photo_name"
