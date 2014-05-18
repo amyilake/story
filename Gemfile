@@ -50,6 +50,7 @@ group :development do
   gem 'annotate', ">=2.6.0"
   gem 'timecop'
   gem 'guard'
+  gem 'guard-livereload'
 end
 
 group :development, :test do

@@ -1,0 +1,16 @@
+<% @posts.each do |post| %>
+  <div class="event-box">
+    <div class="event-attached">
+      留言數<%= post.comments.count %> |
+      按贊
+    </div>
+    <%= link_to post_path(post.id) do %>
+      <%= image_tag "baby.jpg" , :class => "event-photo" %>
+    <% end %>
+    <div class="event-text">
+      <%= link_to(post.title , post_path(post.id)) %> | 
+      <%= post.author.name %> 
+      <br/>
+    </div>
+  </div>
+<% end%>
