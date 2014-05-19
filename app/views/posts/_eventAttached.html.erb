@@ -1,0 +1,8 @@
+
+    <div class="event-attached">
+      留言數<%= post.comment_count %> |
+      <%= link_to post_likes_path(post) , :method=> :post , :remote => true  do %>
+        <%= image_tag "thumbs_up.png" , :class =>"thumb_up" %> 
+      <% end %>
+      <span id="like_count_<%= post.id %>"><%= post.like_count %></span>
+    </div>

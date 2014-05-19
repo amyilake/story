@@ -7,8 +7,10 @@ class LikesController < ApplicationController
     @like.save
     
     if @like
-      redirect_to posts_path
-      #render :nothing => true, :status => 201
+     respond_to do |format|
+        format.html { redirect_to posts_path } #render :nothing => true, :status => 201
+        format.js
+     end
     else
       render :nothing => true, :status => 422
     end

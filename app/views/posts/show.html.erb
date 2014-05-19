@@ -13,6 +13,7 @@
         <label><%= @post.content %></label>
       </fieldset>
     </form>
+    <%= render 'eventAttached' , :post => @post %>
     <%= render_cell :comment, :show, :post => @post %>
   </div>
 </div>
