@@ -51,6 +51,7 @@ group :development do
   gem 'timecop'
   gem 'guard'
   gem 'guard-livereload'
+  gem 'xray-rails'
 end
 
 group :development, :test do

@@ -1,13 +1,10 @@
 <% @posts.each do |post| %>
   <div class="event-box">
-    <%= render 'eventAttached' , :post => post %>
-    <%= link_to post_path(post) do %>
-      <%= image_tag "baby.jpg" , :class => "event-photo" %>
-    <% end %>
-    <div class="event-text">
-      <%= link_to(post.title , post_path(post.id)) %> | 
-      <%= post.author.name %> 
-      <br/>
-    </div>
+    <%= render '/posts/eventAttached' , :post => post %>
+        
+    <%= render '/posts/eventPhoto' , :post => post %>
+
+    <%= render '/posts/eventText' , :post => post %>
+  
   </div>
 <% end%>
