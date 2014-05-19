@@ -1,9 +1,8 @@
-class PostsController < ApplicationController
-
+class PostsController < ApplicationController 
   before_action :login_required , :only => [  :new  , :create , :edit , :update , :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all#.includes(:comments)
   end
 
   def new

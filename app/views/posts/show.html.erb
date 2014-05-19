@@ -1,9 +1,10 @@
-<% if current_user == @post.user %>
+<% if current_user == @post.author %>
   <%= link_to("修改" , edit_post_path(@post.id))%>
   <%= link_to("刪除" , post_path(@post.id) , method: :delete , :confirm => "確定刪除嗎?")%>
 <% end %>
 <%= link_to("返回" , posts_path , :class => "btn btn-info")%>
 <hr>
+
 <div class="row">
   <div class="span12">
     <form class="well">
@@ -12,5 +13,8 @@
         <label><%= @post.content %></label>
       </fieldset>
     </form>
+    <%= render 'eventAttached' , :post => @post %>
+    <%= render_cell :comment, :show, :post => @post %>
   </div>
 </div>
+

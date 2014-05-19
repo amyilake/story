@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cells'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
@@ -48,6 +49,9 @@ group :development do
   gem 'meta_request'
   gem 'annotate', ">=2.6.0"
   gem 'timecop'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'xray-rails'
 end
 
 group :development, :test do

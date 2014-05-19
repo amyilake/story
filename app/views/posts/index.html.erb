@@ -1,12 +1,3 @@
 <div class='row'>
-  <% @posts.each do |post| %>
-    <div class="span4">
-      <%= link_to(post) do %>
-      <div class="well">
-        <%= post.title %> | 
-        <%= post.user.name %>
-      </div>
-    <% end %>
-    </div>
-  <% end%>
+  <%= render 'eventsList' %>
 </div>

@@ -12,6 +12,9 @@
           <li class="">
             <%= link_to( "Home" , root_path)%>
           </li>
+          <li class="">
+            <%= link_to("My Story" , account_posts_path)%>
+          </li>
         </ul>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
