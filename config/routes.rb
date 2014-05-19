@@ -1,9 +1,22 @@
 Story::Application.routes.draw do
+
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  devise_scope :user do
+    get "signin", to: "devise/sessions#new"
+    get "signup", to: "devise/registrations#new"
+    get "signout", to: "devise/sessions#destroy"
+  end
+  
+  resources :posts do
+    resources :comments , :only => [:new, :create, :destroy, :index]
+    resources :likes, :only => [:create, :destroy, :index ]
+  end
+
   # You can have the root of your site routed with "root"
-   root 'home#index'
+   root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -48,9 +61,9 @@ Story::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+     namespace :account do
+       # Directs /admin/products/* to Admin::ProductsController
+       # (app/controllers/admin/products_controller.rb)
+       resources :posts
+     end
 end

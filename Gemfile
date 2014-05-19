@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
+gem 'cells'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
 gem 'bootstrap-sass', '2.3.2.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+
+gem 'mysql2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -38,6 +41,27 @@ end
 gem 'devise'
 
 gem 'simple_form'
+
+group :development do
+  gem 'quiet_assets'
+  gem 'pry-rails'
+  gem "better_errors"
+  gem 'meta_request'
+  gem 'annotate', ">=2.6.0"
+  gem 'timecop'
+  gem 'guard'
+  gem 'guard-livereload'
+  gem 'xray-rails'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem "capybara" 
+  gem "factory_girl_rails"
+  gem "guard-rspec"
+  gem 'cucumber-rails' , :require => false
+  gem 'rspec-given'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

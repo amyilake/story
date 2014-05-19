@@ -1,0 +1,25 @@
+<%= simple_form_for [@post, @comment] do |f| %>
+  <% if @comment.errors.any? %>
+    <div class="error_messages">
+      <h2>error</h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :content %>
+    <%= f.button :submit , :class => "btn btn-success" ,:value =>"留言" %>
+  </div>
+<% end %>
+<div id="comments">
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <%= comment.author.name %>
+      <%= simple_format comment.content %>
+    </div>
+  <% end %>
+</div>
