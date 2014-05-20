@@ -1,3 +1,7 @@
 <%= link_to post_path(post) do %>
-  <%= image_tag "baby.jpg" , :class => "event-photo" %>
+  <% if post.image_url %>
+    <%= image_tag post.image_url(:thumb).to_s , :class => photo_class_name %>
+  <% else %>
+    <%= image_tag "baby.jpg" , :class => "event-photo" %>
+  <% end %>
 <% end %>

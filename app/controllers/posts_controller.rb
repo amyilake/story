@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   before_action :login_required , :only => [  :new  , :create , :edit , :update , :destroy]
 
   def index
-    @posts = Post.all#.includes(:comments)
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @posts = user.posts
+    else
+      @posts = Post.all#.includes(:comments)
+    end
   end
 
   def new

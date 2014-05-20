@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
   has_many :comments , :foreign_key => :author_id , dependent: :destroy
   validates_uniqueness_of :name
 
+  mount_uploader :image, ImageUploader
 end

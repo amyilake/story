@@ -1,4 +1,4 @@
 <div class="event-text">
-  <%= link_to(post.title , post_path(post.id)) %> | 
-  <%= post.author.name %> 
+  <%= link_to(post.title , post_path(post.id) ) %> | 
+  <%= link_to(post.author.name , user_posts_path(post.author.id) ) %> 
 </div>

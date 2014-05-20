@@ -2,6 +2,8 @@
   <div>
     <%= f.input :title , required: true %>
     <%= f.input :content , required: true %>
+    <%= f.input :image %>
+    <%= f.input :remote_image_url %>
     <%= f.input :public , :as => :boolean %>
     <%= f.button :submit , :class => "btn btn-success" %>
   </div>
