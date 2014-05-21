@@ -42,8 +42,6 @@ gem 'devise'
 
 gem 'simple_form'
 
-gem 'bootsy'
-
 group :development do
   gem 'quiet_assets'
   gem 'pry-rails'
@@ -67,6 +65,7 @@ end
 
 gem 'rmagick', '2.13.2'
 gem 'carrierwave'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
