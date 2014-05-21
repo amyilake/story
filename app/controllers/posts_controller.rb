@@ -7,7 +7,7 @@ class PostsController < ApplicationController
       @posts = user.posts
     else
       @posts = Post.all#.includes(:comments)
-    end
+    end 
   end
 
   def new

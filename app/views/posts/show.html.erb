@@ -10,9 +10,9 @@
     <form class="well">
       <fieldset>
         <legend><%= @post.title %></legend>
+        <%= render 'eventPhoto' , :post => @post , :photo_class_name => "show-event-photo" %>
         <label><%= @post.content %></label>
       </fieldset>
-      <%= render 'eventPhoto' , :post => @post , :photo_class_name => "show-event-photo" %>
     </form>
     <%= render 'eventAttached' , :post => @post %>
     <%= render_cell :comment, :show, :post => @post %>
