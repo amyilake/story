@@ -62,6 +62,10 @@ group :development, :test do
   gem 'cucumber-rails' , :require => false
   gem 'rspec-given'
 end
+
+gem 'rmagick', '2.13.2'
+gem 'carrierwave'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
