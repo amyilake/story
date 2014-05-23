@@ -2,6 +2,6 @@
   <% if post.image_url %>
     <%= image_tag post.image_url(:thumb).to_s , :class => photo_class_name %>
   <% else %>
-    <%= image_tag "baby.jpg" , :class => "event-photo" %>
+    <%= image_tag "baby.jpg" , :class => photo_class_name  %>
   <% end %>
 <% end %>
