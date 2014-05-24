@@ -1,0 +1,12 @@
+<% cache posts do %>
+  <% posts.each do |post| %>
+    <div class="post-box">
+      <%= render partial: 'postAttached' , locals: { :post => post } %>
+
+      <%= render partial: 'postPhoto' ,locals: { :post => post , :photo_class_name => "post-photo"}  %>
+
+      <%= render partial: 'postText' , locals: { :post => post } %>
+
+    </div>
+  <% end %>
+<% end %>
