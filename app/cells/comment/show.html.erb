@@ -1,25 +1,21 @@
-
-<%= simple_form_for [@post, @comment] do |f| %>
-  <% if @comment.errors.any? %>
-    <div class="error_messages">
-      <h2>error</h2>
-      <ul>
-        <% @comment.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<% unless @current_user.blank? %>
+  <%= simple_form_for [@post, @comment] do |f| %>
+    <div class="field">
+      <%= f.input :content %>
+      <%= f.button :submit , :class => "btn btn-success" ,:value =>"留言" %>
     </div>
   <% end %>
-    <div class="field">
-    <%= f.input :content %>
-    <%= f.button :submit , :class => "btn btn-success" ,:value =>"留言" %>
-  </div>
 <% end %>
+
 <div id="comments">
   <% @comments.each do |comment| %>
     <div class="comment">
-      <%= comment.author.name %>
-      <%= simple_format comment.content %>
+      <p>
+        <%= image_tag comment.author.image_url(:thumb).to_s , :class => "comment-author-photo" %>
+        <%= comment.author.name %>
+        :
+        <%= comment.content %>
+      </p>
     </div>
   <% end %>
 </div>

@@ -1,10 +1,10 @@
-<% @posts.each do |post| %>
+<% posts.each do |post| %>
   <div class="event-box">
-    <%= render '/posts/eventAttached' , :post => post %>
+    <%= render partial: '/posts/eventAttached' , locals: { :post => post } %>
         
-    <%= render '/posts/eventPhoto' , :post => post , :photo_class_name => "event-photo" %>
+    <%= render partial: '/posts/eventPhoto' ,locals: { :post => post , :photo_class_name => "event-photo"}  %>
 
-    <%= render '/posts/eventText' , :post => post %>
+    <%= render partial: '/posts/eventText' , locals: { :post => post } %>
   
   </div>
 <% end%>
