@@ -2,5 +2,5 @@
   <%= image_tag post.author.image_url(:thumb).to_s , :class => "event-author-photo" %>
   <%= link_to(post.author.name , user_posts_path(post.author.id) ) %> 
   |
-  <%= link_to(post.title , post_path(post.id) ) %>  
+  <%= link_to( truncate( post.title , length: 25, omission: '..')  , post_path(post.id) ) %>  
 </div>
