@@ -6,6 +6,7 @@ class Comment < ActiveRecord::Base
   after_create :increase_comment_counter
   after_destroy :decrease_comment_counter
 
+  
   def increase_comment_counter
     commentable.increment(:comment_count, 1)
     commentable.save

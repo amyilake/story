@@ -1,9 +1,8 @@
 class LikesController < ApplicationController
-  before_action :login_required , :only => [:create]
-
+  before_action :login_required , :only => [ :create ]
   def create
     @liketable = Post.find(params[:post_id])
-    @like = @liketable.likes.new
+    @like = @liketable.likes.new(:author_id => current_user.id)
     @like.save
     
     if @like

@@ -7,12 +7,11 @@
 
 <div class="row">
   <div class="span12">
-    <form class="well">
+    <form class="show-event-well">
       <fieldset>
-        <legend>
-            <div class="show-event-title"><%= @post.title %></div>
+        <h4><div class="show-event-title"><%= @post.title %></div></h4>
             <%= render 'eventPhoto' , :post => @post , :photo_class_name => "show-event-photo" %>
-        </legend>
+        <hr>
         <label><%= raw(@post.content) %></label>
       </fieldset>
     </form>

@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :name
 
   mount_uploader :image, ImageUploader
+  validates_presence_of :image
+
 end

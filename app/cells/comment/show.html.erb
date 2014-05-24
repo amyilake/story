@@ -1,3 +1,4 @@
+
 <%= simple_form_for [@post, @comment] do |f| %>
   <% if @comment.errors.any? %>
     <div class="error_messages">
@@ -9,8 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+    <div class="field">
     <%= f.input :content %>
     <%= f.button :submit , :class => "btn btn-success" ,:value =>"留言" %>
   </div>
