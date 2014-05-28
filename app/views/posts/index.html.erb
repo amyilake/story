@@ -1,4 +1,4 @@
-<div class='row' id="posts">
+<div class='row' id="posts" data-json-url="<%= posts_url(:format => :json) %>">
   <%= render partial: 'postsList' , locals: { posts: @posts}  %> 
 </div>
 

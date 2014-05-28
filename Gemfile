@@ -61,6 +61,8 @@ group :development, :test do
   gem "guard-rspec"
   gem 'cucumber-rails' , :require => false
   gem 'rspec-given'
+  gem 'populator'
+  gem 'faker'
 end
 
 gem 'rmagick', '2.13.2'

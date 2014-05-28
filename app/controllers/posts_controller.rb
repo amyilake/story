@@ -4,9 +4,16 @@ class PostsController < ApplicationController
   def index
     if params[:user_id]
       user = User.find(params[:user_id])
-      @posts = user.posts
+      @posts = user.posts.limit(8)
     else
-      @posts = Post.all#.includes(:comments)
+      @posts = Post.all.limit(8)#.includes(:comments)
+    end
+
+    @posts = @posts.offset((params[:page].to_i-1) * 8) if params[:page].present?
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
     end
   end
 

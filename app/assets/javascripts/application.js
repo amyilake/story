@@ -16,5 +16,8 @@
 //= require ckeditor/override
 //= require ckeditor/init
 //= require ckeditor/config
+//= require mustache
+//= require jquery.mustache
 //= require turbolinks
-//= require_tree .
+//= require_tree ./application/
+

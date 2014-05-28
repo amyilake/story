@@ -10,6 +10,17 @@ module LayoutHelper
     html.join("\n").html_safe
   end
 
+  def render_javascripts(tag_html = nil)
+    html = []
+    if tag_html.present?
+      html << tag_html
+    else
+      html << javascript_include_tag("application", "data-turbolinks-track" => true)
+      html << javascript_include_tag(namespace, "data-turbolinks-track" => true)
+    end
+    html.join("\n").html_safe
+  end
+
   def namespace
     controller_path.split('/').first
   end

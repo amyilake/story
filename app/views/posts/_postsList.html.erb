@@ -1,5 +1,5 @@
-<% cache posts do %>
-  <% posts.each do |post| %>
+<% posts.each do |post| %>
+  <% cache post do %>
     <div class="post-box">
       <%= render partial: 'postAttached' , locals: { :post => post } %>
 
