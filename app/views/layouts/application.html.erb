@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Story</title>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= render_javascripts content_for(:javascripts) %>
   <%= render_stylesheets content_for(:stylesheets) %>
   <%= csrf_meta_tags %>
 </head>

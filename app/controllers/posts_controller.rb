@@ -1,8 +1,20 @@
 class PostsController < ApplicationController 
-  before_action :login_required , :only => [  :new  , :create , :edit , :update , :destroy]
+  before_action :login_required, :only => [  :new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all#.includes(:comments)
+    if params[:user_id]
+      user = User.find(params[:user_id])
+      @posts = user.posts.limit(8)
+    else
+      @posts = Post.all.limit(8)#.includes(:comments)
+    end
+
+    @posts = @posts.offset((params[:page].to_i-1) * 8) if params[:page].present?
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
   end
 
   def new
@@ -12,6 +24,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     @post.save
+
     redirect_to posts_path
   end
 
@@ -40,8 +53,7 @@ class PostsController < ApplicationController
   end
 
   private
-    def post_params
-      params.require(:post).permit!
-    end
-
+  def post_params
+    params.require(:post).permit!
+  end
 end

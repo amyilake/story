@@ -55,13 +55,21 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-rails'
   gem "capybara" 
   gem "factory_girl_rails"
   gem "guard-rspec"
   gem 'cucumber-rails' , :require => false
   gem 'rspec-given'
+  gem 'populator'
+  gem 'faker'
 end
+
+gem 'rmagick', '2.13.2'
+gem 'carrierwave'
+gem 'ckeditor'
+gem 'redis'
+gem 'mustache-js-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

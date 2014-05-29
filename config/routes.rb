@@ -1,5 +1,6 @@
 Story::Application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,9 +11,14 @@ Story::Application.routes.draw do
     get "signout", to: "devise/sessions#destroy"
   end
   
+  resources :users do
+    resources :posts , :only =>[:index]
+  end
+
   resources :posts do
     resources :comments , :only => [:new, :create, :destroy, :index]
-    resources :likes, :only => [:create, :destroy, :index ]
+    resources :likes, :only => [:create ]
+    delete 'likes' => 'likes#destroy'
   end
 
   # You can have the root of your site routed with "root"
@@ -61,9 +67,9 @@ Story::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-     namespace :account do
+  #   namespace :admin do
        # Directs /admin/products/* to Admin::ProductsController
        # (app/controllers/admin/products_controller.rb)
-       resources :posts
-     end
+      # resources :posts
+   #  end
 end
