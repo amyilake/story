@@ -65,10 +65,11 @@ group :development, :test do
   gem 'faker'
 end
 
-gem 'rmagick', '2.13.2'
+gem 'rmagick', '2.13.2' , :require => false
 gem 'carrierwave'
 gem 'ckeditor'
 gem 'redis'
+gem 'mustache'
 gem 'mustache-js-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
