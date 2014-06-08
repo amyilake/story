@@ -6,6 +6,8 @@ gem 'rails', '4.0.3'
 
 gem 'bootstrap-sass', '2.3.2.0'
 
+gem "active_model_serializers"
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
@@ -65,10 +67,11 @@ group :development, :test do
   gem 'faker'
 end
 
-gem 'rmagick', '2.13.2'
+gem 'rmagick', '2.13.2' , :require => false
 gem 'carrierwave'
 gem 'ckeditor'
 gem 'redis'
+gem 'mustache'
 gem 'mustache-js-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -2,6 +2,16 @@ class LikesController < ApplicationController
   
   before_action :login_required, :only => [ :create ]
 
+  def index
+    @liketable = Post.find(params[:post_id])
+    @likes = @liketable.likes
+
+    respond_to do |format|
+      format.js
+      #format.json { render json: @likes }
+    end
+  end
+
   def create
     @liketable = Post.find(params[:post_id])
     @like = @liketable.likes.new(:author_id => current_user.id)
