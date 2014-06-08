@@ -1,11 +1,11 @@
-
 jQuery ->
   if $('#posts').length
     new PostsPager()
 
 class PostsPager
   constructor: (@page = 1) ->
-    $(window).scroll(@check)
+    if $('#posts').length
+      $(window).scroll(@check)
   
   check: =>
     if @nearBottom()
@@ -17,5 +17,7 @@ class PostsPager
     $(window).scrollTop() > $(document).height() - $(window).height() - 50
 
   render: (posts) =>
-    alert posts
+    for post in posts
+      console.log(post)
+      $('#posts').append Mustache.to_html($('#post_template').html(), post)
     $(window).scroll(@check) if posts.length > 0

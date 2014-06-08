@@ -20,4 +20,3 @@
 //= require jquery.mustache
 //= require turbolinks
 //= require_tree ./application/
-

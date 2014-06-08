@@ -17,7 +17,7 @@ Story::Application.routes.draw do
 
   resources :posts do
     resources :comments , :only => [:new, :create, :destroy, :index]
-    resources :likes, :only => [:create ]
+    resources :likes, :only => [:index, :create ]
     delete 'likes' => 'likes#destroy'
   end
 

@@ -10,10 +10,12 @@ class PostsController < ApplicationController
     end
 
     @posts = @posts.offset((params[:page].to_i-1) * 8) if params[:page].present?
-    
     respond_to do |format|
       format.html
-      format.json { render json: @posts }
+      format.json do
+        render :json => @posts, :each_serializer => PostSerializer
+        #render json: @posts.map { |p| view_context.posts_for_mustache(p) }
+      end
     end
   end
 
@@ -54,6 +56,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit!
+    params.require(:post).permit(:title, :content, :author_id, :type, :like_count, :comment_count, :favorite, :image)
   end
 end
