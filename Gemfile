@@ -54,6 +54,7 @@ group :development do
   gem 'guard'
   gem 'guard-livereload'
   gem 'xray-rails'
+  gem 'binding_of_caller'
 end
 
 group :development, :test do

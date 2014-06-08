@@ -1,5 +1,6 @@
 class PostSerializer < ActiveModel::Serializer
-  
+ include ActionView::Helpers::TextHelper
+
   delegate :current_user, to: :scope
 
   attributes :id, :comment_count, :like_count 
@@ -7,8 +8,7 @@ class PostSerializer < ActiveModel::Serializer
   has_one :author, serializer: AuthorSerializer
 
   def title 
-    #title = truncate( object.title , length: 25, omission: '..')
-    title = object.title
+    title = truncate( object.title , length: 25, omission: '..')
   end
 
   def photo
