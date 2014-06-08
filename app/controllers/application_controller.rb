@@ -5,8 +5,9 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-
- def login_required
+  serialization_scope :view_context
+ 
+  def login_required
     if current_user.blank?
       respond_to do |format|
         format.html{

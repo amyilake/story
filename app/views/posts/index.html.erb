@@ -1,7 +1,17 @@
 <div class='row' id="posts" data-json-url="<%= posts_url(:format => :json) %>">
-  <%= render partial: 'postsList' , locals: { posts: @posts}  %> 
+  <% @posts.each do |post| %>
+    <div class="post-box">
+      <%= render 'postAttached', :mustache => json_for(post) %>
+      <%= render 'postPhoto', :mustache => json_for(post) %>
+      <%= render 'postText', :mustache => json_for(post) %>
+    </div>
+  <% end %>
 </div>
 
 <script type="text/html" id="post_template">
-  <%= render 'post' %>
+  <div class="post-box">
+    <%= render 'postAttached' %>
+    <%= render 'postPhoto' %>
+    <%= render 'postText' %>
+  </div>
 </script>

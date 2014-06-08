@@ -10,11 +10,11 @@ class PostsController < ApplicationController
     end
 
     @posts = @posts.offset((params[:page].to_i-1) * 8) if params[:page].present?
-    
     respond_to do |format|
       format.html
       format.json do
-        render json: @posts.map { |p| view_context.posts_for_mustache(p) }
+        render :json => @posts, :each_serializer => PostSerializer
+        #render json: @posts.map { |p| view_context.posts_for_mustache(p) }
       end
     end
   end

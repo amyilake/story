@@ -17,6 +17,8 @@ module PostsHelper
     end
 
     {
+      :post => post,
+
       :author_name => post.author.name,
       :author_image => post.author.image_url(:thumb).to_s,
       :author_url => user_posts_path(post.author.id),

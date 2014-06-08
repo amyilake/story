@@ -5,8 +5,8 @@ class Like < ActiveRecord::Base
   after_create :increase_like_counter
   after_destroy :decrease_like_counter
 
-  after_commit :add_to_redis, :on => :create
-  after_commit :delete_from_redis, :on => :destroy
+  #after_commit :add_to_redis, :on => :create
+  #after_commit :delete_from_redis, :on => :destroy
 
 
   def increase_like_counter

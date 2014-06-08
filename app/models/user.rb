@@ -15,12 +15,7 @@ class User < ActiveRecord::Base
   after_update :touch_all_comments
 
   def check_like_post?(post)
-    check = $redis.SISMEMBER self.email , "#{post.id}"
-    if check == 1
-      return true
-    else
-      return false
-    end
+    post.likes.map { |like| like.author_id }.include?(self.id)
   end
 
   protected
