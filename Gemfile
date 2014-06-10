@@ -74,6 +74,9 @@ gem 'ckeditor'
 gem 'redis'
 gem 'mustache'
 gem 'mustache-js-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

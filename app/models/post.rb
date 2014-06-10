@@ -4,4 +4,10 @@ class Post < ActiveRecord::Base
   has_many :likes, :as => :liketable, :dependent => :destroy
 
   mount_uploader :image, ImageUploader
+
+  def liked_people
+    self.likes.map { |like| like.author }
+  end
+
+
 end

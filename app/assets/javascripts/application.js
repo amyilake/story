@@ -18,5 +18,6 @@
 //= require ckeditor/config
 //= require mustache
 //= require jquery.mustache
+//= require fancybox
 //= require turbolinks
 //= require_tree ./application/

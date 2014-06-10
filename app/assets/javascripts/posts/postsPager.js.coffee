@@ -30,7 +30,7 @@ class PostsPager
     if @nearBottom()
       @page++
       $(window).unbind('scroll', @check)
-      $.getJSON($('#posts').data('json-url'),user_id: @user_id , page: @page, @render)
+      $.getJSON($('#posts').data('json-url'), user_id: @user_id, page: @page, @render)
       
   nearBottom: =>
     if $('#posts').length
@@ -38,6 +38,7 @@ class PostsPager
 
   render: (posts) =>
     for post in posts
+      console.log(post)
       $('#posts').append Mustache.to_html($('#post_template').html(), post)
     $(window).scroll(@check) if posts.length > 0
 
