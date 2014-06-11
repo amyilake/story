@@ -1,3 +1,4 @@
+
 <div class='row' id="posts" data-json-url="<%= posts_url(:format => :json) %>">
   <% @posts.each do |post| %>
     <div class="post-box">
@@ -8,6 +9,8 @@
   <% end %>
 </div>
 
+<%= render 'likes/showLikedPeople' %>
+
 <script type="text/html" id="post_template">
   <div class="post-box">
     <%= render 'postAttached' %>
@@ -15,3 +18,4 @@
     <%= render 'postText' %>
   </div>
 </script>
+

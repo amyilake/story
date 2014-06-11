@@ -1,14 +1,15 @@
 class PostSerializer < ActiveModel::Serializer
-  
+ include ActionView::Helpers::TextHelper
+
   delegate :current_user, to: :scope
 
   attributes :id, :comment_count, :like_count 
-  attributes :title, :photo, :url, :like_text, :like_method, :like_url
+  attributes :title, :photo, :url, :like_text, :like_method, :like_url, :liked_people_url
+  
   has_one :author, serializer: AuthorSerializer
 
   def title 
-    #title = truncate( object.title , length: 25, omission: '..')
-    title = object.title
+    title = truncate( object.title , length: 25, omission: '..')
   end
 
   def photo
@@ -40,6 +41,10 @@ class PostSerializer < ActiveModel::Serializer
   end
 
   def like_url
-    like_url = post_likes_path(object)
+    post_likes_path(object)
+  end
+
+  def liked_people_url
+    post_likedPeople_path(object)
   end
 end
