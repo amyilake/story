@@ -1,7 +1,7 @@
 <form class="show-post-well">
   <fieldset>
     <h4><div class="show-post-title"><%= @post.title %></div></h4>
-    <%= render 'postPhoto' , :post => @post , :photo_class_name => "show-post-photo" %>
+    <%= render 'postPhoto' , :mustache => json_for(@post)  %>
     <hr>
     <label><%= raw(@post.content) %></label>
   </fieldset>

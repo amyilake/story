@@ -1,0 +1,33 @@
+
+
+<script id="template" type="x-tmpl-mustache">
+  <ul class="list-like-group">
+    {{#rows}}
+    <li class="list-like-group-item" >
+      <img class="like-author-photo" src="{{image.url}}" />
+      <a href="/users/{{id}}/posts">
+        {{name}}
+      </a>
+    </li>
+    {{/rows}}
+  </ul>
+</script>
+
+<div id="likedPeopleForm" style="display:none;">
+  <div class="list-like-title">這些人覺得很贊</div>
+  <div id="target">show list like group</div>
+</div>
+
+<script type="text/javascript">
+  
+//  $( "#posts" ).on( "click", "likedPeople", function() {
+      $("a.likedPeople").fancybox({
+        content: $('#likedPeopleForm'),
+        helpers : {
+          overlay : {
+            locked : false
+            }
+          }
+      });
+//  });
+</script>
