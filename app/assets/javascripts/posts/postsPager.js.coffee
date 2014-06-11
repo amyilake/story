@@ -4,7 +4,7 @@ jQuery ->
   if $('#posts').length
     @postsPager = new PostsPager(1)
 
-ready = -> #document load
+ready = ->
   if $('#posts').length
     url = location.pathname # check url have 'users' or not
     if(url.indexOf("users") >= 0)
@@ -38,7 +38,6 @@ class PostsPager
 
   render: (posts) =>
     for post in posts
-      console.log(post)
       $('#posts').append Mustache.to_html($('#post_template').html(), post)
     $(window).scroll(@check) if posts.length > 0
 
