@@ -4,5 +4,17 @@ body {
 }
 
 .container {
-  width: 85%;
+  width: 95%;
+  margin-right: 20px;
+}
+
+a {
+  color: #0060B6;
+  text-decoration: none;
+
+  &:hover {
+    color:#00A0C6;
+    text-decoration:none;
+    cursor:pointer;
+    }
 }

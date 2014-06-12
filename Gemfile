@@ -75,7 +75,7 @@ gem 'mustache'
 gem 'mustache-js-rails'
 gem 'fancybox2-rails'
 gem 'jquery-turbolinks'
-
+gem 'sanitize'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
