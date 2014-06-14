@@ -1,5 +1,5 @@
 class AuthorSerializer < ActiveModel::Serializer
-  attributes :name, :image, :url
+  attributes :name, :image, :url, :id
   
   def image
     object.image_url(:thumb)

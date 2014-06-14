@@ -1,3 +1,17 @@
-<a href="{{url}}">
-  <img class="post-photo" src="{{photo}}"/>
-</a>
+<div class="postPhoto">
+  <div class="imgWrap">
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="imgDiv">
+      <div>
+        <a href="{{url}}">
+          <div class="post-photo" style="background-image: url({{photo}})">
+            <div class="post-content">
+              {{content}}
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

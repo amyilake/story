@@ -4,9 +4,9 @@ class PostsController < ApplicationController
   def index
     if params[:user_id] != "" && params[:user_id] != nil
       user = User.find(params[:user_id])
-      @posts = user.posts.limit(8)
+      @posts = user.posts.limit(8).order("created_at desc")
     else
-      @posts = Post.all.limit(8)
+      @posts = Post.all.limit(8).order("created_at desc")
     end
     @posts = @posts.offset((params[:page].to_i-1) * 8) if params[:page].present?
    
@@ -24,9 +24,11 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.save
-
-    redirect_to posts_path
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   def show 
@@ -57,14 +59,31 @@ class PostsController < ApplicationController
     @post = Post.find(params[:post_id])
     
     respond_to do |format|
-      format.js
+      format.js { render "liked_comment_people", 
+        :locals => {
+          :people => @post.liked_people,
+          :text => "這些人覺得很贊"
+        } 
+      }
     end
+  end
 
+  def commentPeople
+    @post = Post.find(params[:post_id])
+    
+    respond_to do |format|
+      format.js { render "liked_comment_people", 
+        :locals => {
+          :people => @post.comment_people,
+          :text => "留言"
+        } 
+      }
+    end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :author_id, :type, :like_count, :comment_count, :favorite, :image)
+    params.require(:post).permit(:title, :content, :author_id, :type, :like_count, :comment_count, :favorite, :image, :remote_image_url)
   end
 end

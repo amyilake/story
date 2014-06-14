@@ -10,12 +10,12 @@ ready = ->
     if(url.indexOf("users") >= 0)
       user_id = url.match(/\/users\/(.*)/)[1]
       user_id = user_id.replace('\/posts','')
-      @postsPager.user_id = user_id
+      postsPager.user_id = user_id
     else
-      @postsPager.user_id = ''
+      postsPager.user_id = ''
 
-    @postsPager.page = 1 #set page = 1 init
-    @postsPager.startScroll() # set Scroll init
+    postsPager.page = 1 #set page = 1 init
+    postsPager.startScroll() # set Scroll init
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
