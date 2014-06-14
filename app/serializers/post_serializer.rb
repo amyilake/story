@@ -4,7 +4,7 @@ class PostSerializer < ActiveModel::Serializer
   delegate :current_user, to: :scope
 
   attributes :id, :comment_count, :like_count, :content
-  attributes :title, :photo, :url, :like_text, :like_method, :like_url, :liked_people_url
+  attributes :title, :photo, :url, :like_text, :like_method, :like_url, :liked_people_url, :comment_people_url
   
   has_one :author, serializer: AuthorSerializer
 
@@ -51,5 +51,9 @@ class PostSerializer < ActiveModel::Serializer
 
   def liked_people_url
     post_likedPeople_path(object)
+  end
+
+  def comment_people_url
+    post_commentPeople_path(object)
   end
 end

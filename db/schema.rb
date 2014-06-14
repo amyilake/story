@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522205522) do
+ActiveRecord::Schema.define(version: 20140614054007) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -56,15 +56,14 @@ ActiveRecord::Schema.define(version: 20140522205522) do
     t.text     "content"
     t.integer  "author_id"
     t.string   "type"
-    t.text     "remote_photo_path"
-    t.string   "remote_photo_name"
-    t.integer  "like_count",        default: 0
-    t.integer  "comment_count",     default: 0
+    t.integer  "like_count",       default: 0
+    t.integer  "comment_count",    default: 0
     t.boolean  "favorite"
     t.boolean  "public"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+    t.string   "remote_image_url"
   end
 
   create_table "users", force: true do |t|
