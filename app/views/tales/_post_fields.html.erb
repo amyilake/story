@@ -1,0 +1,12 @@
+<fieldset>
+  <%= f.input :title, :label =>"文章標題", required: true %>
+  <% if !post.blank? %>
+    <%= image_tag(post.image_url(:thumb)) if post.image? %>
+  <% end %>
+  <%= f.input :image, :label =>"文章封面照片" %>
+  <%= f.input :remote_image_url, :label =>"或連結" %>
+  <%= f.input :author_id, input_html: { value: current_user.id }, :as => :hidden %>
+  <%= f.input :content, :label =>"文章內容", :class => 'ckeditor', :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => "Pure", :namespace => ""} } %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to "remove", '#', class: "remove_fields" %>
+</fieldset>

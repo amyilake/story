@@ -7,9 +7,9 @@
 
 <div class="row">
   <div class="span12">
-      <%= render partial: 'showPost' , locals: { :post => @post } %>
+      <%= render partial: 'showPost', locals: { :post => @post } %>
 
-      <%= render partial: 'postAttached' , locals:{ :mustache => json_for(@post)} %>
+      <%= render partial: 'postAttached', locals:{ :mustache => json_for(@post)} %>
 
       <%= render_cell :comment, :show, :post => @post , :current_user => current_user %>
   </div>

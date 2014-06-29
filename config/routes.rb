@@ -15,6 +15,8 @@ Story::Application.routes.draw do
     resources :posts , :only =>[:index]
   end
 
+  resources :tales
+
   resources :posts do
     resources :comments , :only => [:new, :create, :destroy, :index]
     resources :likes, :only => [:index, :create ]

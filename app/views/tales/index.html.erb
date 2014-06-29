@@ -1,0 +1,9 @@
+<%= will_paginate @tales %>
+<div class="row" id="tales" data-json-url="<%= tales_url(:format => :json) %>">
+  <% @tales.each do |tale| %>
+    <%= render partial: "tales_carousel", locals: { :tale => tale } %>
+  <% end %>
+</div>
+
+<%= render "posts/showLikedCommentPeople" %>
+

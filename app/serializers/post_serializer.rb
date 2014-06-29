@@ -3,18 +3,13 @@ class PostSerializer < ActiveModel::Serializer
 
   delegate :current_user, to: :scope
 
-  attributes :id, :comment_count, :like_count, :content
+  attributes :id, :comments_count, :likes_count, :content, :truncate_sanitize_content
   attributes :title, :photo, :url, :like_text, :like_method, :like_url, :liked_people_url, :comment_people_url
   
   has_one :author, serializer: AuthorSerializer
 
   def title 
     title = truncate( object.title, length: 25, omission: '..' )
-  end
-
-  def content
-    content = Sanitize.clean( object.content )
-    content = truncate( content, length: 100, omission: '..' )
   end
 
   def photo

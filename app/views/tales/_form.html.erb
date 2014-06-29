@@ -1,0 +1,17 @@
+<%= simple_form_for(@tale) do |f| %>
+  <div>
+    <%= f.input :title, :label => "故事標題", required: true %>
+    <%= f.input :content, :label => "故事描述" %>
+    <%= image_tag(@tale.image_url(:thumb)) if @tale.image? %>
+    <%= f.input :image, :label =>"故事封面照片" %>
+    <%= f.input :remote_image_url, :label =>"或連結" %>
+    <% @tale.posts.each do |post| %>
+      <%= f.simple_fields_for :posts, post do |builder| %>
+        <%= render 'post_fields',{ f: builder, post: post } %>
+      <% end %>
+    <% end %>
+    
+    <%= link_to_add_fields "Add Post", f, :posts %>
+    <%= f.button :submit, :class => "btn btn-success" %>
+  </div>
+<% end %>
