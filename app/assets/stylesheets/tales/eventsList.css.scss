@@ -1,0 +1,40 @@
+.post-box {
+  float: left;
+  width: 30%;
+  padding: 5px 0 0 0;
+  margin: 7px 34px 7px 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  
+  .post-text{
+        position:relative;
+        color: #FFFFFF;
+        float: left;
+  }
+  .post-author-photo{
+      width: 30px;
+      height: 30px;
+  }
+
+}   
+.post-bottom{
+  width: 100%;
+  background-color: rgba(0,0,0,1);
+  height: 30px;
+}
+.post-attached{
+  float: right;
+  margin: 5px 10px 5px 5px; 
+  
+  .thumb_up{
+    width: 20px;
+    height: 20px;    
+  }
+  
+  .comment_pic{
+    width: 20px;
+    height: 20px;
+  }
+
+} 
+

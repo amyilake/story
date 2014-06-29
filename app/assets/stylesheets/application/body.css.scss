@@ -3,6 +3,22 @@ body {
   background-image: image-url("retina_wood.png");
 }
 
+.container-header{
+  width: 95%;
+  margin-left: 30px;
+}
 .container {
-  width: 85%;
+  width: 95%;
+  margin-right: 20px;
+}
+
+a {
+  color:#00B6A7;
+  text-decoration: none;
+
+  &:hover {
+    color:#00A0C6;
+    text-decoration:none;
+    cursor:pointer;
+    }
 }

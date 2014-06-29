@@ -1,8 +1,8 @@
 <form class="show-post-well">
   <fieldset>
-    <h4><div class="show-post-title"><%= @post.title %></div></h4>
-    <%= render 'postPhoto' , :mustache => json_for(@post)  %>
+    <h4><div class="show-post-title"><%= post.title %></div></h4>
+    <%= render 'posts/postPhoto' , :mustache => json_for(post)  %>
     <hr>
-    <label><%= raw(@post.content) %></label>
+    <label><%= raw(post.content) %></label>
   </fieldset>
 </form>

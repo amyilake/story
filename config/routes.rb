@@ -15,11 +15,14 @@ Story::Application.routes.draw do
     resources :posts , :only =>[:index]
   end
 
+  resources :tales
+
   resources :posts do
     resources :comments , :only => [:new, :create, :destroy, :index]
     resources :likes, :only => [:index, :create ]
     delete 'likes' => 'likes#destroy'
     get 'likedPeople' => 'posts#likedPeople'
+    get 'commentPeople' => 'posts#commentPeople'
   end
 
   # You can have the root of your site routed with "root"

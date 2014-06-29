@@ -1,5 +1,5 @@
 $('[data-id="like_text_<%= @liketable.id %>"]').html("收回贊");
 $('[data-id="like_text_<%= @liketable.id %>"]').data('method', 'delete');
-$('[data-id="like_count_<%= @liketable.id %>"]').html('<%= @like.liketable.like_count %>');
+$('[data-id="like_count_<%= @liketable.id %>"]').html('<%= @like.liketable.reload.likes_count %>');
 
 

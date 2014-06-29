@@ -1,0 +1,24 @@
+<!-- carousel -->
+<div class="tale-carousel">
+  <div id="myCarousel<%= tale.id %>" class="carousel slide">
+    <div class="carousel-inner">
+      <%= render partial: "tales_tale_carousel", locals: { :tale => tale } %>
+      
+      <% tale.posts.each do |post|%>
+        <%= render partial: "tales_post_carousel", locals: { :post => post } %>
+      <% end %>
+    
+    </div>
+    <a class="left carousel-control" href="#myCarousel<%= tale.id %>" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel<%= tale.id %>" data-slide="next">&rsaquo;</a>
+  </div><!-- /.carousel -->
+</div>
+
+<script>
+ // !function ($) {
+    $(function(){
+      // carousel demo
+      $('#myCarousel').carousel()
+    })
+ // }(window.jQuery)
+</script>

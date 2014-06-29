@@ -1,0 +1,10 @@
+
+var template = $('#liked_comment_template').html();
+Mustache.parse(template);   // optional, speeds up future uses
+
+var arr = <%= safe(people) %> ;
+
+var rendered = Mustache.render(template, {rows: arr})
+
+$('#list-like-title').html("<%= text %>");
+$('#liked_comment_target').html(rendered);

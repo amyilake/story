@@ -1,11 +1,14 @@
 <div class="post-attached">
-  留言數{{comment_count}}
+  <img class="comment_pic" src="/assets/comment.png" />
+  <a href="{{comment_people_url}}" class="liked_comment_people" data-remote="true">
+    {{comments_count}}
+  </a>
   |
   <img alt="Thumbs up" class="thumb_up" src="/assets/thumbs_up.png" />
 
-  <a href="{{liked_people_url}}" class="likedPeople"  data-remote="true" >
+  <a href="{{liked_people_url}}" class="liked_comment_people"  data-remote="true" >
     <likedPeople data-id="like_count_{{id}}">
-      {{like_count}}
+      {{likes_count}}
     </likedPeople>
   </a>
   <a data-id="like_text_{{id}}" data-method="{{like_method}}" data-remote="true" href="{{like_url}}" rel="nofollow">{{like_text}}</a>

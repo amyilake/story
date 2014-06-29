@@ -1,0 +1,12 @@
+
+<div class="item active">
+  <img class="tale-post-image" src="<%= tale.image_url %>" alt="">
+  <div class="container">
+    <div class="carousel-caption">
+      <h1><p class="wheat"><%= tale.title %><p></h1>
+      <p class="lead"><%= tale.content %></p>
+      <%= link_to("故事集", tale_path(tale), :class => "btn btn-primary" )%>
+      <%= render "posts/postText_author", :mustache => json_for(tale) %>
+    </div>
+  </div>
+</div>
