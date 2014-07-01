@@ -1,0 +1,12 @@
+<div class="item">
+  <img class="tale-post-image" src="<%= post.image_url %>" alt="">
+  <div class="container">
+    <div class="carousel-caption">
+      <h1><p class="goldenrod" ><%= post.title %></h1>
+      <p class="lead"><%= post.truncate_sanitize_content %></p>
+      <%= render "posts/postAttached", :mustache => json_for(post) %>
+      <%= link_to("文章", post_path(post), :class => "btn btn-primary" )%>
+      <%= render "posts/postText_author", :mustache => json_for(post) %>
+    </div>
+  </div>
+</div>

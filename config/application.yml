@@ -1,0 +1,13 @@
+defaults: &defaults
+  story:
+    fb_app_id: 670210133048594
+    fb_secret: 185248ae88483d60bc175947482e72b5
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

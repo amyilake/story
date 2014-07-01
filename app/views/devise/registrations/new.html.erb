@@ -4,9 +4,14 @@
   <%= devise_error_messages! %>
   <%= f.input :name , :required => true %>
   <%= f.input :email , :required => true %>
-  <%= f.input :password , :required => true %>
-  <%= f.input :password_confirmation , :required => true %>
-  <%= f.input :image  %>
+
+  <% if f.object.password_required? %>
+    <%= f.input :password , :required => true %>
+    <%= f.input :password_confirmation , :required => true %>
+  <% end %>
+
+  <%= f.input :image %>
+  <%= f.input :remote_image_url %>
   <%= f.button :submit ,"Sign up"%>
 <% end %>
 

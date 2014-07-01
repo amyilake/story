@@ -1,0 +1,61 @@
+.imgWrap {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin: 10px;
+
+  .bg1 {
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+    background-color: #E3E3E3;
+    width: 100%;
+    height: 100%;
+    z-index: 91;
+  }
+
+  .bg2 {
+    position: absolute;
+    left: -3px;
+    top: -3px;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #E3E3E3;
+    z-index: 92;
+  }
+
+  .imgDiv {
+    width: 95%;
+    height: 95%;
+    position: relative;
+    z-index: 98;
+  }
+}
+
+div.post-photo {
+  background-size: 100% 100%; 
+  height: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border: 3px solid #fff;
+  
+  .post-content{
+      width: 100%;
+      height: 200px;
+      opacity:0;
+      background: #FFF;
+  }
+
+  &:hover .post-content{
+           opacity:0.5;
+           text-align:justify; 
+           color:#000000; 
+           font-size:20px; 
+           font-weight:700; 
+           font-family:"Times New Roman", Times, serif; 
+  }
+}

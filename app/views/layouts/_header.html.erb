@@ -1,6 +1,6 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <div class="container">
+    <div class="container-header">
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -10,21 +10,26 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <li class="">
-            <%= link_to( "Home" , root_path)%>
+            <%= link_to("文章", root_path)%>
+          </li>
+          <li>
+            <%= link_to("故事集", tales_path)%>
           </li>
           <li class="">
             <% if user_signed_in? %>
-              <%= link_to("My Story" , user_posts_path(current_user) ) %>
+              <%= link_to("我的文章" , user_posts_path(current_user) ) %>
             <% end %>
           </li>
         </ul>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
+            <li><%= link_to("新故事集",new_tale_path ) %></li>
             <li><%= link_to("新故事",new_post_path ) %></li>
             <li><%= link_to( current_user.name , edit_user_registration_path) %></li>
             <li><%= link_to("登出" , signout_path) %></li>
           <% else %>
             <li><%= link_to("登入" , signin_path) %></li>
+            <li><%= link_to("fb登入" , user_omniauth_authorize_path(:facebook)) %></li>
             <li><%= link_to("註冊" , signup_path) %></li>
           <% end %>
         </ul>

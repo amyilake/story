@@ -1,7 +1,7 @@
 <% unless @current_user.blank? %>
   <%= simple_form_for [@post, @comment] do |f| %>
     <div class="field">
-      <%= f.input :content %>
+      <%= f.input :content , :label =>"留言" %>
       <%= f.button :submit , :class => "btn btn-success" ,:value =>"留言" %>
     </div>
   <% end %>

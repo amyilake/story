@@ -1,0 +1,36 @@
+
+
+<script id="liked_comment_template" type="x-tmpl-mustache">
+  <ul class="list-like-group">
+    {{#rows}}
+    <li class="list-like-group-item" >
+    {{#author}}
+      <img class="like-author-photo" src="{{image}}" />
+      <a href="/users/{{id}}/posts">
+        {{name}}
+      </a>
+    {{/author}}
+    {{content}}
+    </li>
+    {{/rows}}
+  </ul>
+</script>
+
+<div id="liked_comment_form" style="display:none;">
+  <div class="list-like-title" id="list-like-title"></div>
+  <div id="liked_comment_target"></div>
+</div>
+
+<script type="text/javascript">
+  
+//  $( "#posts" ).on( "click", "liked_comment_people", function() {
+      $("a.liked_comment_people").fancybox({
+        content: $('#liked_comment_form'),
+        helpers : {
+          overlay : {
+            locked : false
+            }
+          }
+      });
+//  });
+</script>

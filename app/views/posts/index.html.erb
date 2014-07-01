@@ -1,21 +1,26 @@
-
-<div class='row' id="posts" data-json-url="<%= posts_url(:format => :json) %>">
+<div class="row" id="posts" data-json-url="<%= posts_url(:format => :json) %>">
   <% @posts.each do |post| %>
     <div class="post-box">
-      <%= render 'postAttached', :mustache => json_for(post) %>
       <%= render 'postPhoto', :mustache => json_for(post) %>
-      <%= render 'postText', :mustache => json_for(post) %>
+      <div class="post-bottom">
+        <%= render 'postAttached', :mustache => json_for(post) %>
+        <%= render 'postText_author', :mustache => json_for(post) %>
+        <%= render 'postText_title', :mustache => json_for(post) %>
+      </div>
     </div>
   <% end %>
 </div>
 
-<%= render 'likes/showLikedPeople' %>
+<%= render 'showLikedCommentPeople' %>
 
 <script type="text/html" id="post_template">
   <div class="post-box">
-    <%= render 'postAttached' %>
     <%= render 'postPhoto' %>
-    <%= render 'postText' %>
+    <div class="post-bottom">
+      <%= render 'postAttached' %>
+      <%= render 'postText_author' %>
+      <%= render 'postText_title'%>
+    </div>
   </div>
 </script>
 
