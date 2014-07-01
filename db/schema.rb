@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140622232707) do
+ActiveRecord::Schema.define(version: 20140630225031) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -96,6 +96,9 @@ ActiveRecord::Schema.define(version: 20140622232707) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "image"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "remote_image_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
