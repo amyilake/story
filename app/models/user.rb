@@ -53,9 +53,8 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
   
-
   def check_like_post?(post)
-    post.likes.map { |like| like.author_id }.include?(self.id)
+    post.likes.pluck(:author_id).include?(self.id)
   end
 
   protected

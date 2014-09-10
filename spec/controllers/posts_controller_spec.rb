@@ -1,9 +1,12 @@
 require 'rspec/given' 
-require 'spec_helper'
-describe PostsController do
-  Given(:post1) { Post.create! }
-  Given(:post2) { Post.create! }
-  Given(:user) { FactoryGirl.create(:user) }
+require 'rails_helper'
+
+describe PostsController, :type => :controller do
+  include Devise::TestHelpers
+  Given(:post1) { create(:post) }
+  Given(:post2) { create(:post) }
+  Given(:user) { create(:user) }
+
   context "GET #index" do
     When { get :index }
       context "renders the index template" do

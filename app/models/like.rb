@@ -1,6 +1,8 @@
 class Like < ActiveRecord::Base
   belongs_to :liketable, :polymorphic => true, :counter_cache => true
   belongs_to :author, :class_name => "User"
+
+  validates_presence_of :author
   
   #after_create :increase_like_counter
   #after_destroy :decrease_like_counter

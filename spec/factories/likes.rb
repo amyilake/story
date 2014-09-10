@@ -1,6 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
-FactoryGirl.define do
-  factory :like do
-  end
-end
+# FactoryGirl.define do
+#   factory :like do
+#     # assocation :author, :factory => :user
+#   end
+# end
